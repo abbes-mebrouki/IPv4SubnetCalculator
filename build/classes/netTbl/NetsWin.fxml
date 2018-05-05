@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPnl" prefHeight="338.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="NetworksTable.NetsTableController">
+    <stylesheets>
+        <URL value="@netstablewin.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tbl" layoutX="100.0" layoutY="46.0" prefHeight="446.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="idClm" prefWidth="40.0" text="ID" />
+          <TableColumn fx:id="netClm" prefWidth="140.0" text="Network Address" />
+            <TableColumn fx:id="fhostClm" prefWidth="140.0" text="First Valid Host" />
+            <TableColumn fx:id="lhostClm" prefWidth="140.0" text="Last Valid Host" />
+            <TableColumn fx:id="bcClm" prefWidth="140.0" text="Broadcast Address" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

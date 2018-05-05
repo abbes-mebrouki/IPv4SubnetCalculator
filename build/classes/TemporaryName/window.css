@@ -1,0 +1,13 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.okBtn{
+    -fx-background-color : rgb(0, 153, 204);
+    -fx-backgrounf-radius : 30;
+    -fx-border-radius : 30;
+}

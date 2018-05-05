@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane fx:id="satchPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TemporaryName.WindowController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="mainPnl" prefHeight="416.0" prefWidth="788.0" style="-fx-background-color: linear-gradient(to bottom, #e1e1e1 10%, #dce4e4 100%);" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@window.css" />
+          </stylesheets>
+         <children>
+            <JFXTextField fx:id="ip_in" focusColor="#0099cc" labelFloat="true" layoutX="10.0" layoutY="48.0" onAction="#ipAction" prefHeight="22.0" prefWidth="161.0" promptText="Enter an IP" text="10.100.48.27" unFocusColor="#8a8282" />
+            <JFXTextField fx:id="cidr_in" focusColor="#0099cc" labelFloat="true" layoutX="185.0" layoutY="48.0" onAction="#cidrAction" prefHeight="22.0" prefWidth="70.0" promptText="CIDR" unFocusColor="#8a8282" />
+            <MenuBar prefWidth="300.0" style="-fx-background-color: rgb(238, 238, 238);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#clearTblAction" text="Clear Table Content" />
+                        <MenuItem mnemonicParsing="false" onAction="#clearLSAction" text="Clear LeftSide Panel" />
+                        <MenuItem mnemonicParsing="false" onAction="#clearAllAction" text="Clear All" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Tools">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openSMWin" text="Subnet Mask" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                     <graphic>
+                        <JFXCheckBox fx:id="onTopBox" checkedColor="#66abcc" onAction="#OnTopAction" text="On Top" unCheckedColor="#c6c1c1" />
+                     </graphic>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label layoutX="10.0" layoutY="135.0" prefHeight="14.0" prefWidth="42.0" text="Class : " />
+            <Label layoutX="10.0" layoutY="159.0" prefHeight="14.0" text="Default Mask : " />
+            <Label layoutX="10.0" layoutY="183.0" text="CIDR : " />
+            <Label layoutX="9.0" layoutY="207.0" text="Net Portion : " />
+            <Label layoutX="10.0" layoutY="231.0" text="Host Portion : " />
+            <Label layoutX="10.0" layoutY="255.0" prefHeight="14.0" prefWidth="65.0" text="Host Rang : " />
+            <Label layoutX="10.0" layoutY="279.0" text="Netword ID : " />
+            <Label layoutX="10.0" layoutY="303.0" text="Broadcast ID : " />
+            <Label layoutX="10.0" layoutY="327.0" text="Number of networks : " />
+            <Label layoutX="10.0" layoutY="351.0" prefHeight="14.0" prefWidth="109.0" text="Number of hosts  : " />
+            <Label fx:id="classLbl" layoutX="62.0" layoutY="135.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label fx:id="deMaskLbl" layoutX="102.0" layoutY="159.0" prefHeight="14.0" prefWidth="145.0" />
+            <Label fx:id="cidrLbl" layoutX="82.0" layoutY="183.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label fx:id="netPLbl" layoutX="89.0" layoutY="207.0" prefHeight="14.0" prefWidth="125.0" />
+            <Label fx:id="hostPLbl" layoutX="89.0" layoutY="231.0" prefHeight="14.0" prefWidth="112.0" />
+            <Label fx:id="hRangeLbl" layoutX="89.0" layoutY="255.0" prefHeight="14.0" prefWidth="194.0" />
+            <Label fx:id="netIdLbl" layoutX="89.0" layoutY="279.0" prefHeight="14.0" prefWidth="145.0" />
+            <Label fx:id="bcIdLbl" layoutX="89.0" layoutY="303.0" prefHeight="14.0" prefWidth="145.0" />
+            <Label fx:id="netsNumLbl" layoutX="129.0" layoutY="327.0" prefHeight="14.0" prefWidth="65.0" />
+            <Label fx:id="hostsNumLbl" layoutX="129.0" layoutY="351.0" prefHeight="14.0" prefWidth="65.0" />
+            <JFXButton fx:id="resultBtn" layoutX="10.0" layoutY="87.0" onAction="#resultBtnAction" prefHeight="25.0" prefWidth="244.0" style="-fx-background-color: rgb(0, 153, 204); -fx-background-radius: 4; -fx-border-radius: 4;" text="Get Result" />
+            <JFXButton layoutX="201.0" layoutY="380.0" prefHeight="22.0" prefWidth="52.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: rgb(0, 153, 204);" text="More" />
+            <JFXButton layoutX="113.0" layoutY="380.0" prefHeight="24.0" prefWidth="65.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: rgb(0, 153, 204);" text="Show all" />
+            <AnchorPane fx:id="tblPnl" layoutX="271.0" layoutY="27.0" prefHeight="389.0" prefWidth="472.0" style="-fx-background-color: rgb(230, 230, 230);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+               <children>
+                  <TableView fx:id="tbl" prefHeight="390.0" prefWidth="518.0" style="-fx-background-color: rgb(230, 230, 230);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="netNumClm" prefWidth="103.0" style="-fx-alignment: CENTER;" text="Net #" />
+                      <TableColumn fx:id="netIDClm" prefWidth="103.0" style="-fx-alignment: CENTER;" text="Network Address" />
+                        <TableColumn fx:id="fHostClm" prefWidth="103.0" style="-fx-alignment: CENTER;" text="First Host" />
+                        <TableColumn fx:id="lHostClm" prefWidth="103.0" style="-fx-alignment: CENTER;" text="Last Host" />
+                        <TableColumn fx:id="bcIDClm" prefWidth="105.0" style="-fx-alignment: CENTER;" text="Broadcast Address" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
